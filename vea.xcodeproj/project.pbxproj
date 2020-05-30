@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FC8FF1F248304A800B1B07E /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8FF1E248304A700B1B07E /* CustomSegue.swift */; };
+		1FC8FF232483098500B1B07E /* NewsInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8FF222483098500B1B07E /* NewsInformationVC.swift */; };
 		429E35002482E98C00710DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429E34FF2482E98C00710DB3 /* AppDelegate.swift */; };
 		429E35022482E98C00710DB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429E35012482E98C00710DB3 /* SceneDelegate.swift */; };
 		429E35042482E98C00710DB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429E35032482E98C00710DB3 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FC8FF1E248304A700B1B07E /* CustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
+		1FC8FF222483098500B1B07E /* NewsInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInformationVC.swift; sourceTree = "<group>"; };
 		429E34FC2482E98C00710DB3 /* vea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		429E34FF2482E98C00710DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		429E35012482E98C00710DB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				429E34FF2482E98C00710DB3 /* AppDelegate.swift */,
 				429E35012482E98C00710DB3 /* SceneDelegate.swift */,
 				429E35032482E98C00710DB3 /* ViewController.swift */,
+				1FC8FF222483098500B1B07E /* NewsInformationVC.swift */,
+				1FC8FF1E248304A700B1B07E /* CustomSegue.swift */,
 				429E35052482E98C00710DB3 /* Main.storyboard */,
 				429E35082482E98E00710DB3 /* Assets.xcassets */,
 				429E350A2482E98E00710DB3 /* LaunchScreen.storyboard */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC8FF1F248304A800B1B07E /* CustomSegue.swift in Sources */,
 				429E35042482E98C00710DB3 /* ViewController.swift in Sources */,
 				429E35002482E98C00710DB3 /* AppDelegate.swift in Sources */,
+				1FC8FF232483098500B1B07E /* NewsInformationVC.swift in Sources */,
 				429E35022482E98C00710DB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
