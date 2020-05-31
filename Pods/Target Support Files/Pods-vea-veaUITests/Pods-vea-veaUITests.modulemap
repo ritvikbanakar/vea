@@ -1,0 +1,6 @@
+framework module Pods_vea_veaUITests {
+  umbrella header "Pods-vea-veaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
