@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import SwiftSoup
 class ViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -19,11 +20,12 @@ class ViewController: UIViewController {
     var positionTop: CGAffineTransform!
     var positionCenter: CGAffineTransform!
     var positionBottom: CGAffineTransform!
-    
+    var para: [String] = []
+
     static var titles: [String] = []
     static var authors: [String] = []
     static var dates: [String] = []
-    static var text: [String] = []
+    static var text: [[String]] = []
     static var sub: [String] = []
     static var url: [String] = []
     static var currentIndex = 0
@@ -70,9 +72,37 @@ class ViewController: UIViewController {
                     ViewController.sub.append(miniArray["the_news_desk"] as! String)
                     ViewController.sub.append(miniArray["the_date"] as! String)
                 }
+                
                 self.setTitles(title1Index: ViewController.currentIndex, title2Index: ViewController.currentIndex+1)
-
-
+                for web in ViewController.url {
+                    print(URL(string: web)!)
+                    print(ViewController.text)
+                    print("\n\n\n")
+                    let html = try! String(contentsOf: URL(string: web)!, encoding: .utf8)
+                    do {
+                       let doc: Document = try SwiftSoup.parseBodyFragment(html)
+                        let body: Elements = try doc.getElementsByTag("p")
+                         let authorStuff: [Element] = try doc.select("meta").array()
+                        for name in authorStuff {
+                            if(try name.attr("name") == "byl") {
+                                ViewController.authors.append(try name.attr("content"))
+                            }
+                        }
+                        for p in body {
+                            var check = try p.text()
+                            if(check != "Advertisement" && check != "Supported by"
+                                && !check.hasPrefix("By")) {
+                                self.para.append(try p.text())
+                            }
+                        }
+                        ViewController.text.append(self.para)
+                    } catch Exception.Error(let type, let message) {
+                        print(message)
+                    } catch {
+                        print("error")
+                    }
+                 
+                }
 
             }
         }) { (error) in  print(error.localizedDescription) }
