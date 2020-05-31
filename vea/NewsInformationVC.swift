@@ -27,6 +27,10 @@ class NewsInformationVC: UIViewController {
         
         fillData()
     }
+    @IBAction func saveArticle(){
+        ViewController.savedIndex.append(ViewController.currentIndex)
+    }                   
+    
     
     func fillData(){
         titleLabel.text = ViewController.titles[ViewController.currentIndex]

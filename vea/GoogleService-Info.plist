@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>153744649262-u9r9bsoeffpj0t9eoti9fqdne11r2tsu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.153744649262-u9r9bsoeffpj0t9eoti9fqdne11r2tsu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCDyQmczeWsIvHzktF4MopiVC9KGVYS8NU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>153744649262</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.hackathon.vea</string>
+	<key>PROJECT_ID</key>
+	<string>data-aa85e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>data-aa85e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:153744649262:ios:d94a4a49c84ac1c0a903bf</string>
+	<key>DATABASE_URL</key>
+	<string>https://data-aa85e.firebaseio.com</string>
+</dict>
+</plist>

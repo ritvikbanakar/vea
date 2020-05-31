@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 class ViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -20,14 +20,18 @@ class ViewController: UIViewController {
     var positionCenter: CGAffineTransform!
     var positionBottom: CGAffineTransform!
     
-    static var titles = ["Security Officers Gunned Down At Oakland Federal Building; One Dead, One Wounded - CBS San Francisco","Trump slams White House protesters as 'just there to cause trouble' as DC mayor defends city - CNN","England risks COVID-19 resurgence by ending lockdown too soon, scientific advisers say - Reuters"]
-    static var authors = ["Vidit","banakar","sid"]
-    static var dates = ["1","2","3"]
-    static var text = ["a","b","c"]
+    static var titles: [String] = []
+    static var authors: [String] = []
+    static var dates: [String] = []
+    static var text: [String] = []
+    static var sub: [String] = []
+    static var url: [String] = []
     static var currentIndex = 0
+    static var savedIndex: [Int]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        read()
         
         positionTop = CGAffineTransform(translationX: 0, y: -height)
         positionBottom = CGAffineTransform(translationX: 0, y: height)
@@ -43,11 +47,36 @@ class ViewController: UIViewController {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
         swipeUp.direction = .up
         self.view.addGestureRecognizer(swipeUp)
-        setTitles(title1Index: ViewController.currentIndex, title2Index: ViewController.currentIndex+1)
         setUp()
         // Do any additional setup after loading the view.
+        
+        
     }
     
+    
+    func read(){
+        let ref = Database.database().reference()
+        ref.child("articles").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let data = snapshot.value as? [String: Any] {
+                let values = Array(data.values)
+                print(values)
+                let valueDict  = values as! [[String: Any]]
+                print("~~~~~~~~~~~~~~~~~`")
+                print("\(valueDict) \n\n")
+                
+                for miniArray in valueDict{
+                    ViewController.titles.append(miniArray["the_headline"] as! String)
+                    ViewController.url.append(miniArray["the_url"] as! String)
+                    ViewController.sub.append(miniArray["the_news_desk"] as! String)
+                    ViewController.sub.append(miniArray["the_date"] as! String)
+                }
+                self.setTitles(title1Index: ViewController.currentIndex, title2Index: ViewController.currentIndex+1)
+
+
+
+            }
+        }) { (error) in  print(error.localizedDescription) }
+    }
     func setUp(){
         title2.transform = positionBottom
         subText2.transform = positionBottom
@@ -56,6 +85,8 @@ class ViewController: UIViewController {
     func setTitles(title1Index: Int, title2Index: Int){
         title1.text = ViewController.titles[title1Index]
         title2.text = ViewController.titles[title2Index]
+        subText1.text = ViewController.sub[title1Index]
+        subText2.text = ViewController.sub[title2Index]
     }
     
     
