@@ -36,7 +36,7 @@ class NewsInformationVC: UIViewController {
         titleLabel.text = ViewController.titles[ViewController.currentIndex]
         authorLabel.text = ViewController.authors[ViewController.currentIndex]
         datelabel.text = ViewController.dates[ViewController.currentIndex]
-        articleTextView.text = ViewController.text[ViewController.currentIndex]
+        //articleTextView.text = ViewController.text[ViewController.currentIndex]
     }
     
     

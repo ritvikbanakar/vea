@@ -7,6 +7,7 @@ target 'vea' do
 
   # Pods for vea
 pod 'FirebaseDatabase'
+pod 'SwiftSoup'
   target 'veaTests' do
     inherit! :search_paths
     # Pods for testing
