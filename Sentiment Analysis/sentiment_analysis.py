@@ -11,7 +11,7 @@ config = {
   "storageBucket": "data-aa85e.appspot.com"
 
 }
-key = "tdVGXxkAvX0rCp5D1b9y3AAZkOt6OJih"
+key = ""
 
 url =  'https://api.nytimes.com/svc/archive/v1/2020/5.json?api-key='+key
 jq_query = f'.response .docs [] | {{the_snippet: .snippet, the_headline: .headline .main, the_date: .pub_date, the_news_desk: .news_desk, the_url: .web_url, image_url: .multimedia[0] .url}}'
